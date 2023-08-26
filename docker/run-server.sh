@@ -23,7 +23,7 @@ gunicorn \
     --bind "${SUPERSET_BIND_ADDRESS:-0.0.0.0}:${SUPERSET_PORT:-8088}" \
     --access-logfile "${ACCESS_LOG_FILE:-$HYPHEN_SYMBOL}" \
     --error-logfile "${ERROR_LOG_FILE:-$HYPHEN_SYMBOL}" \
-    --workers ${SERVER_WORKER_AMOUNT:-1} \
+    --workers ${SERVER_WORKER_AMOUNT:-4} \
     --worker-class ${SERVER_WORKER_CLASS:-gthread} \
     --threads ${SERVER_THREADS_AMOUNT:-20} \
     --timeout ${GUNICORN_TIMEOUT:-60} \
